@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulário de Incidente - TI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background-color: #f9f9f9;
+    }
+
+    h2 {
+      color: #444;
+    }
+
+    .alerta {
+      background-color: #fff3cd;
+      border: 1px solid #ffeeba;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 25px;
+    }
+
+    .alerta h2 {
+      margin-top: 0;
+    }
+
+    .alerta ul {
+      padding-left: 20px;
+    }
+
+    form {
+      background-color: #ffffff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    label.required::after {
+      content: " *";
+      color: red;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    textarea {
+      height: 100px;
+      resize: vertical;
+    }
+
+    .tooltip {
+      font-size: 12px;
+      color: #777;
+    }
+
+    .submit-btn {
+      padding: 10px 25px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #0056b3;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="alerta">
+    <h2>⚠️ Atenção!</h2>
+    <ul>
+      <li><strong>Preencha todos os <span style="color: red;">campos obrigatórios</span>.</strong></li>
+      <li>Sempre que possível, <strong><u>anexe um print do erro</u></strong>.</li>
+      <li>Forneça o máximo de detalhes no <strong><u>campo descrição detalhada</u></strong>.</li>
+    </ul>
+  </div>
+
+  <form>
+    <div class="form-group">
+      <label for="nomeUsuario">Nome do usuário</label>
+      <input type="text" id="nomeUsuario" value="Rodrigues, Gabriel" disabled />
+    </div>
+
+    <div class="form-group">
+      <label for="telefone" class="required">Telefone para contato</label>
+      <input type="tel" id="telefone" required />
+    </div>
+
+    <div class="form-group">
+      <label for="outroUsuario">Abrir em nome de outro usuário</label>
+      <select id="outroUsuario">
+        <option>-- Nenhum --</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="horario" class="required">Horário de trabalho</label>
+      <select id="horario" required>
+        <option>-- Nenhum --</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="empresa" class="required">Informe sua Empresa</label>
+      <select id="empresa" required>
+        <option>-- Nenhum --</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="localidade" class="required">Informe sua Localidade</label>
+      <select id="localidade" required>
+        <option>-- Nenhum --</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="tipoEquipamento" class="required">Tipo de Equipamento</label>
+      <select id="tipoEquipamento" required>
+        <option>-- Nenhum --</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="codigoEquipamento">Código do Equipamento</label>
+      <textarea id="codigoEquipamento" placeholder="Favor inserir o código do equipamento adesivado na máquina.&#10;Segue padrão:&#10;Tubarão = G + 5 dígitos&#10;Vega = VDS + 5 dígitos&#10;Contagem = ADM + 5 dígitos"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="descricaoResumida">Descrição resumida</label>
+      <input type="text" id="descricaoResumida" />
+    </div>
+
+    <div class="form-group">
+      <label for="descricaoDetalhada" class="required">Descrição detalhada do problema</label>
+      <textarea id="descricaoDetalhada" required></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">Enviar Chamado</button>
+  </form>
+
+</body>
+</html>
